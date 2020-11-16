@@ -1,0 +1,119 @@
+2020-11-17 05:25:25,788 ERROR: Exception on /login [GET] [in c:\users\илья\pycharmprojects\petproject\venv\lib\site-packages\flask\app.py:1892]
+Traceback (most recent call last):
+  File "c:\users\илья\pycharmprojects\petproject\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1277, in _execute_context
+    cursor, statement, parameters, context
+  File "c:\users\илья\pycharmprojects\petproject\venv\lib\site-packages\sqlalchemy\engine\default.py", line 593, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.OperationalError: no such column: user.about_me
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "c:\users\илья\pycharmprojects\petproject\venv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\илья\pycharmprojects\petproject\venv\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\илья\pycharmprojects\petproject\venv\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\илья\pycharmprojects\petproject\venv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "c:\users\илья\pycharmprojects\petproject\venv\lib\site-packages\flask\app.py", line 1948, in full_dispatch_request
+    rv = self.preprocess_request()
+  File "c:\users\илья\pycharmprojects\petproject\venv\lib\site-packages\flask\app.py", line 2242, in preprocess_request
+    rv = func()
+  File "C:\PetProject\PetProject\app\routes.py", line 129, in before_request
+    if current_user.is_authenticated:
+  File "c:\users\илья\pycharmprojects\petproject\venv\lib\site-packages\werkzeug\local.py", line 347, in __getattr__
+    return getattr(self._get_current_object(), name)
+  File "c:\users\илья\pycharmprojects\petproject\venv\lib\site-packages\werkzeug\local.py", line 306, in _get_current_object
+    return self.__local()
+  File "c:\users\илья\pycharmprojects\petproject\venv\lib\site-packages\flask_login\utils.py", line 26, in <lambda>
+    current_user = LocalProxy(lambda: _get_user())
+  File "c:\users\илья\pycharmprojects\petproject\venv\lib\site-packages\flask_login\utils.py", line 346, in _get_user
+    current_app.login_manager._load_user()
+  File "c:\users\илья\pycharmprojects\petproject\venv\lib\site-packages\flask_login\login_manager.py", line 318, in _load_user
+    user = self._user_callback(user_id)
+  File "C:\PetProject\PetProject\app\models.py", line 16, in load_user
+    return User.query.get(int(id))
+  File "c:\users\илья\pycharmprojects\petproject\venv\lib\site-packages\sqlalchemy\orm\query.py", line 1018, in get
+    return self._get_impl(ident, loading.load_on_pk_identity)
+  File "c:\users\илья\pycharmprojects\petproject\venv\lib\site-packages\sqlalchemy\orm\query.py", line 1135, in _get_impl
+    return db_load_fn(self, primary_key_identity)
+  File "c:\users\илья\pycharmprojects\petproject\venv\lib\site-packages\sqlalchemy\orm\loading.py", line 286, in load_on_pk_identity
+    return q.one()
+  File "c:\users\илья\pycharmprojects\petproject\venv\lib\site-packages\sqlalchemy\orm\query.py", line 3463, in one
+    ret = self.one_or_none()
+  File "c:\users\илья\pycharmprojects\petproject\venv\lib\site-packages\sqlalchemy\orm\query.py", line 3432, in one_or_none
+    ret = list(self)
+  File "c:\users\илья\pycharmprojects\petproject\venv\lib\site-packages\sqlalchemy\orm\query.py", line 3508, in __iter__
+    return self._execute_and_instances(context)
+  File "c:\users\илья\pycharmprojects\petproject\venv\lib\site-packages\sqlalchemy\orm\query.py", line 3533, in _execute_and_instances
+    result = conn.execute(querycontext.statement, self._params)
+  File "c:\users\илья\pycharmprojects\petproject\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1011, in execute
+    return meth(self, multiparams, params)
+  File "c:\users\илья\pycharmprojects\petproject\venv\lib\site-packages\sqlalchemy\sql\elements.py", line 298, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "c:\users\илья\pycharmprojects\petproject\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1130, in _execute_clauseelement
+    distilled_params,
+  File "c:\users\илья\pycharmprojects\petproject\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1317, in _execute_context
+    e, statement, parameters, cursor, context
+  File "c:\users\илья\pycharmprojects\petproject\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1511, in _handle_dbapi_exception
+    sqlalchemy_exception, with_traceback=exc_info[2], from_=e
+  File "c:\users\илья\pycharmprojects\petproject\venv\lib\site-packages\sqlalchemy\util\compat.py", line 182, in raise_
+    raise exception
+  File "c:\users\илья\pycharmprojects\petproject\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1277, in _execute_context
+    cursor, statement, parameters, context
+  File "c:\users\илья\pycharmprojects\petproject\venv\lib\site-packages\sqlalchemy\engine\default.py", line 593, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such column: user.about_me
+[SQL: SELECT user.id AS user_id, user.username AS user_username, user.email AS user_email, user.password_hash AS user_password_hash, user.about_me AS user_about_me, user.last_seen AS user_last_seen 
+FROM user 
+WHERE user.id = ?]
+[parameters: (3,)]
+(Background on this error at: http://sqlalche.me/e/13/e3q8)
+2020-11-17 05:26:02,386 INFO: PetProject has started [in C:\PetProject\PetProject\app\__init__.py:25]
+2020-11-17 05:29:10,779 INFO: PetProject has started [in C:\PetProject\PetProject\app\__init__.py:25]
+2020-11-17 05:29:42,663 INFO: PetProject has started [in C:\PetProject\PetProject\app\__init__.py:25]
+2020-11-17 05:30:09,968 INFO: PetProject has started [in C:\PetProject\PetProject\app\__init__.py:25]
+2020-11-17 05:32:58,192 INFO: PetProject has started [in C:\PetProject\PetProject\app\__init__.py:25]
+2020-11-17 05:36:11,755 INFO: PetProject has started [in C:\PetProject\PetProject\app\__init__.py:25]
+2020-11-17 05:36:44,974 INFO: PetProject has started [in C:\PetProject\PetProject\app\__init__.py:25]
+2020-11-17 05:42:27,995 INFO: PetProject has started [in C:\PetProject\PetProject\app\__init__.py:25]
+2020-11-17 05:42:33,192 ERROR: Exception on /index [GET] [in c:\users\илья\pycharmprojects\petproject\venv\lib\site-packages\flask\app.py:1892]
+Traceback (most recent call last):
+  File "c:\users\илья\pycharmprojects\petproject\venv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\илья\pycharmprojects\petproject\venv\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\илья\pycharmprojects\petproject\venv\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\илья\pycharmprojects\petproject\venv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "c:\users\илья\pycharmprojects\petproject\venv\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\илья\pycharmprojects\petproject\venv\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "c:\users\илья\pycharmprojects\petproject\venv\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\PetProject\PetProject\app\routes.py", line 25, in index
+    posts=posts)
+  File "c:\users\илья\pycharmprojects\petproject\venv\lib\site-packages\flask\templating.py", line 138, in render_template
+    ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "c:\users\илья\pycharmprojects\petproject\venv\lib\site-packages\jinja2\environment.py", line 930, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "c:\users\илья\pycharmprojects\petproject\venv\lib\site-packages\jinja2\environment.py", line 883, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "c:\users\илья\pycharmprojects\petproject\venv\lib\site-packages\jinja2\environment.py", line 857, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "c:\users\илья\pycharmprojects\petproject\venv\lib\site-packages\jinja2\loaders.py", line 127, in load
+    code = environment.compile(source, name, filename)
+  File "c:\users\илья\pycharmprojects\petproject\venv\lib\site-packages\jinja2\environment.py", line 638, in compile
+    self.handle_exception(source=source_hint)
+  File "c:\users\илья\pycharmprojects\petproject\venv\lib\site-packages\jinja2\environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "c:\users\илья\pycharmprojects\petproject\venv\lib\site-packages\jinja2\_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "C:\PetProject\PetProject\app\templates\index.html", line 4, in template
+    {{ if form }}
+jinja2.exceptions.TemplateSyntaxError: expected token 'end of print statement', got 'form'
+2020-11-17 05:43:13,928 INFO: PetProject has started [in C:\PetProject\PetProject\app\__init__.py:25]

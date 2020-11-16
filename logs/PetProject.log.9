@@ -1,0 +1,69 @@
+2020-11-17 01:15:22,214 INFO: PetProject has started [in C:\PetProject\PetProject\app\__init__.py:25]
+2020-11-17 01:16:16,709 INFO: PetProject has started [in C:\PetProject\PetProject\app\__init__.py:25]
+2020-11-17 02:51:22,566 INFO: PetProject has started [in C:\PetProject\PetProject\app\__init__.py:25]
+2020-11-17 02:52:10,667 INFO: PetProject has started [in C:\PetProject\PetProject\app\__init__.py:25]
+2020-11-17 02:53:04,137 INFO: PetProject has started [in C:\PetProject\PetProject\app\__init__.py:25]
+2020-11-17 02:54:13,179 INFO: PetProject has started [in C:\PetProject\PetProject\app\__init__.py:25]
+2020-11-17 02:55:23,733 INFO: PetProject has started [in C:\PetProject\PetProject\app\__init__.py:25]
+2020-11-17 03:35:23,749 INFO: PetProject has started [in C:\PetProject\PetProject\app\__init__.py:25]
+2020-11-17 04:52:18,623 INFO: PetProject has started [in C:\PetProject\PetProject\app\__init__.py:25]
+2020-11-17 04:52:38,203 INFO: PetProject has started [in C:\PetProject\PetProject\app\__init__.py:25]
+2020-11-17 04:56:30,218 INFO: PetProject has started [in C:\PetProject\PetProject\app\__init__.py:25]
+2020-11-17 04:56:32,960 ERROR: Exception on /index [GET] [in c:\users\илья\pycharmprojects\petproject\venv\lib\site-packages\flask\app.py:1892]
+Traceback (most recent call last):
+  File "c:\users\илья\pycharmprojects\petproject\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1277, in _execute_context
+    cursor, statement, parameters, context
+  File "c:\users\илья\pycharmprojects\petproject\venv\lib\site-packages\sqlalchemy\engine\default.py", line 593, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.OperationalError: no such column: post.timestamp
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "c:\users\илья\pycharmprojects\petproject\venv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\илья\pycharmprojects\petproject\venv\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\илья\pycharmprojects\petproject\venv\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\илья\pycharmprojects\petproject\venv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "c:\users\илья\pycharmprojects\petproject\venv\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\илья\pycharmprojects\petproject\venv\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "c:\users\илья\pycharmprojects\petproject\venv\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\PetProject\PetProject\app\routes.py", line 22, in index
+    posts = current_user.followed_posts().all()
+  File "c:\users\илья\pycharmprojects\petproject\venv\lib\site-packages\sqlalchemy\orm\query.py", line 3346, in all
+    return list(self)
+  File "c:\users\илья\pycharmprojects\petproject\venv\lib\site-packages\sqlalchemy\orm\query.py", line 3508, in __iter__
+    return self._execute_and_instances(context)
+  File "c:\users\илья\pycharmprojects\petproject\venv\lib\site-packages\sqlalchemy\orm\query.py", line 3533, in _execute_and_instances
+    result = conn.execute(querycontext.statement, self._params)
+  File "c:\users\илья\pycharmprojects\petproject\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1011, in execute
+    return meth(self, multiparams, params)
+  File "c:\users\илья\pycharmprojects\petproject\venv\lib\site-packages\sqlalchemy\sql\elements.py", line 298, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "c:\users\илья\pycharmprojects\petproject\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1130, in _execute_clauseelement
+    distilled_params,
+  File "c:\users\илья\pycharmprojects\petproject\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1317, in _execute_context
+    e, statement, parameters, cursor, context
+  File "c:\users\илья\pycharmprojects\petproject\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1511, in _handle_dbapi_exception
+    sqlalchemy_exception, with_traceback=exc_info[2], from_=e
+  File "c:\users\илья\pycharmprojects\petproject\venv\lib\site-packages\sqlalchemy\util\compat.py", line 182, in raise_
+    raise exception
+  File "c:\users\илья\pycharmprojects\petproject\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1277, in _execute_context
+    cursor, statement, parameters, context
+  File "c:\users\илья\pycharmprojects\petproject\venv\lib\site-packages\sqlalchemy\engine\default.py", line 593, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such column: post.timestamp
+[SQL: SELECT anon_1.post_id AS anon_1_post_id, anon_1.post_body AS anon_1_post_body, anon_1.post_timestamp AS anon_1_post_timestamp, anon_1.post_user_id AS anon_1_post_user_id 
+FROM (SELECT post.id AS post_id, post.body AS post_body, post.timestamp AS post_timestamp, post.user_id AS post_user_id 
+FROM post JOIN followers ON followers.followed_id = post.user_id 
+WHERE followers.follower_id = ? UNION SELECT post.id AS post_id, post.body AS post_body, post.timestamp AS post_timestamp, post.user_id AS post_user_id 
+FROM post 
+WHERE post.user_id = ?) AS anon_1 ORDER BY anon_1.post_timestamp DESC]
+[parameters: (3, 3)]
+(Background on this error at: http://sqlalche.me/e/13/e3q8)

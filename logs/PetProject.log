@@ -1,0 +1,47 @@
+2020-11-17 05:43:16,796 ERROR: Exception on /index [GET] [in c:\users\илья\pycharmprojects\petproject\venv\lib\site-packages\flask\app.py:1892]
+Traceback (most recent call last):
+  File "c:\users\илья\pycharmprojects\petproject\venv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\илья\pycharmprojects\petproject\venv\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\илья\pycharmprojects\petproject\venv\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\илья\pycharmprojects\petproject\venv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "c:\users\илья\pycharmprojects\petproject\venv\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\илья\pycharmprojects\petproject\venv\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "c:\users\илья\pycharmprojects\petproject\venv\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\PetProject\PetProject\app\routes.py", line 25, in index
+    posts=posts)
+  File "c:\users\илья\pycharmprojects\petproject\venv\lib\site-packages\flask\templating.py", line 138, in render_template
+    ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "c:\users\илья\pycharmprojects\petproject\venv\lib\site-packages\jinja2\environment.py", line 930, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "c:\users\илья\pycharmprojects\petproject\venv\lib\site-packages\jinja2\environment.py", line 883, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "c:\users\илья\pycharmprojects\petproject\venv\lib\site-packages\jinja2\environment.py", line 857, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "c:\users\илья\pycharmprojects\petproject\venv\lib\site-packages\jinja2\loaders.py", line 127, in load
+    code = environment.compile(source, name, filename)
+  File "c:\users\илья\pycharmprojects\petproject\venv\lib\site-packages\jinja2\environment.py", line 638, in compile
+    self.handle_exception(source=source_hint)
+  File "c:\users\илья\pycharmprojects\petproject\venv\lib\site-packages\jinja2\environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "c:\users\илья\pycharmprojects\petproject\venv\lib\site-packages\jinja2\_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "C:\PetProject\PetProject\app\templates\index.html", line 20, in template
+    {% endblock %}
+jinja2.exceptions.TemplateSyntaxError: Encountered unknown tag 'endblock'. You probably made a nesting mistake. Jinja is expecting this tag, but currently looking for 'elif' or 'else' or 'endif'. The innermost block that needs to be closed is 'if'.
+2020-11-17 05:43:48,132 INFO: PetProject has started [in C:\PetProject\PetProject\app\__init__.py:25]
+2020-11-17 06:03:11,150 INFO: PetProject has started [in C:\PetProject\PetProject\app\__init__.py:25]
+2020-11-17 06:04:40,780 INFO: PetProject has started [in C:\PetProject\PetProject\app\__init__.py:25]
+2020-11-17 06:05:52,256 INFO: PetProject has started [in C:\PetProject\PetProject\app\__init__.py:25]
+2020-11-17 06:08:02,772 INFO: PetProject has started [in C:\PetProject\PetProject\app\__init__.py:25]
+2020-11-17 06:10:19,897 INFO: PetProject has started [in C:\PetProject\PetProject\app\__init__.py:25]
+2020-11-17 06:10:38,266 INFO: PetProject has started [in C:\PetProject\PetProject\app\__init__.py:25]
+2020-11-17 06:11:53,262 INFO: PetProject has started [in C:\PetProject\PetProject\app\__init__.py:25]
+2020-11-17 06:12:40,419 INFO: PetProject has started [in C:\PetProject\PetProject\app\__init__.py:25]
+2020-11-17 06:22:36,653 INFO: PetProject has started [in C:\PetProject\PetProject\app\__init__.py:28]
